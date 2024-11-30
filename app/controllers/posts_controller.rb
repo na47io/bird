@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  allow_unauthenticated_access only: [:index]
+  allow_unauthenticated_access only: [ :index ]
   def index
     @query = params[:q]
     @page = (params[:page] || 1).to_i
     @per_page = 5
-    
+
     base_query = Post.includes(:replies).order(created_at: :desc)
 
     if @query.present?
