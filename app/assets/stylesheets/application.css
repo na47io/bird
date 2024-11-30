@@ -517,17 +517,12 @@ body {
   gap: 8px;
 }
 
-.author-input,
 .body-input {
   width: 100%;
   border: none;
   outline: none;
   font-size: 16px;
   resize: none;
-}
-
-.author-input {
-  padding: 8px 0;
 }
 
 .body-input {

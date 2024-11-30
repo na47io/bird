@@ -22,6 +22,6 @@ class RepliesController < ApplicationController
   private
 
   def reply_params
-    params.require(:reply).permit(:body, :author)
+    params.require(:reply).permit(:body).merge(author: Current.user.username)
   end
 end
