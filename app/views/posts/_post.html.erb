@@ -55,18 +55,40 @@
   
   <dialog id="reply-dialog-<%= post.id %>" class="reply-dialog">
     <%= form_for [post, Reply.new], html: { class: "reply-form" } do |f| %>
-      <div>
-        <%= f.label :author %>
-        <%= f.text_field :author %>
+      <div class="dialog-header">
+        <button type="button" class="cancel-button" onclick="this.closest('dialog').close()">Cancel</button>
+        <%= f.submit "Post", class: "post-submit-button" %>
       </div>
       
-      <div>
-        <%= f.label :body %>
-        <%= f.text_area :body %>
+      <div class="dialog-content">
+        <div class="profile-image"></div>
+        <div class="input-area">
+          <%= f.text_field :author, placeholder: "Your name", class: "author-input" %>
+          <%= f.text_area :body, placeholder: "What's up?", class: "body-input" %>
+        </div>
       </div>
       
-      <%= f.submit "Post Reply", class: "reply-button" %>
-      <button type="button" onclick="this.closest('dialog').close()">Cancel</button>
+      <div class="dialog-footer">
+        <div class="visibility-info">
+          <span class="globe-icon">🌐</span>
+          <span>Anybody can interact</span>
+        </div>
+        
+        <div class="dialog-tools">
+          <div class="media-tools">
+            <button type="button" class="tool-button">🖼️</button>
+            <button type="button" class="tool-button">🎥</button>
+            <button type="button" class="tool-button">GIF</button>
+            <button type="button" class="tool-button">😊</button>
+          </div>
+          <div class="post-meta-tools">
+            <select class="language-select">
+              <option>English</option>
+            </select>
+            <span class="character-count">300</span>
+          </div>
+        </div>
+      </div>
     <% end %>
   </dialog>
 </div>
