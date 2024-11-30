@@ -3,19 +3,13 @@ class RepliesController < ApplicationController
     @post = Post.find(params[:post_id])
     @reply = @post.replies.build(reply_params)
 
-    respond_to do |format|
-      if @reply.save
-        format.turbo_stream {
-          render turbo_stream: turbo_stream.replace(
-            "replies_#{@post.id}",
-            partial: "posts/replies",
-            locals: { post: @post }
-          )
-        }
+    if @reply.save
+      respond_to do |format|
         format.html { redirect_to posts_path, notice: "Reply was successfully created." }
-      else
-        format.html { redirect_to posts_path, alert: "Error creating reply." }
+        format.turbo_stream { head :ok }
       end
+    else
+      redirect_to posts_path, alert: "Error creating reply."
     end
   end
 
