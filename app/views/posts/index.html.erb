@@ -47,4 +47,21 @@
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<button class="new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
+
+<dialog id="new-post-dialog" class="post-dialog">
+  <%= form_for Post.new, html: { class: "post-form" } do |f| %>
+    <div>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </div>
+    
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+    
+    <%= f.submit "Create Post", class: "post-button" %>
+    <button type="button" onclick="this.closest('dialog').close()">Cancel</button>
+  <% end %>
+</dialog>

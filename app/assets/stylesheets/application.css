@@ -94,11 +94,57 @@
   border-radius: 4px;
 }
 
-.reply-form button {
+.reply-form button,
+.post-form button {
   background: #1da1f2;
   color: white;
   border: none;
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
+}
+
+.new-post-button {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.new-post-button:hover {
+  background: #1991da;
+}
+
+.post-dialog {
+  padding: 20px;
+  border-radius: 12px;
+  border: none;
+  min-width: 300px;
+}
+
+.post-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 8px;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.post-form textarea {
+  min-height: 100px;
 }
