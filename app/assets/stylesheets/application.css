@@ -43,21 +43,38 @@ body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.post-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
 .post .author {
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 8px;
-}
-
-.post .body {
   font-size: 1.1em;
-  line-height: 1.4;
-  margin: 12px 0;
 }
 
 .post .timestamp {
   color: #657786;
   font-size: 0.9em;
+}
+
+.post-content {
+  margin-left: 4px;
+}
+
+.post .body {
+  font-size: 1.1em;
+  line-height: 1.4;
+  margin-bottom: 12px;
 }
 
 .replies {

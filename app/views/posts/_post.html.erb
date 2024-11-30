@@ -1,16 +1,24 @@
 <div id="<%= dom_id post %>">
 </div>
 <div class="post">
-  <div class="author"><%= post.author %></div>
-  <div class="body"><%= highlight_hashtags(post.body) %></div>
-  <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
-  <% if post.hash_tags.any? %>
-    <div class="tags">
-      <% post.hash_tags.each do |tag| %>
-        <span class="tag"><%= tag.name %></span>
-      <% end %>
+  <div class="post-header">
+    <div class="post-meta">
+      <div class="author"><%= post.author %></div>
+      <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
     </div>
-  <% end %>
+    <button class="reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
+  </div>
+  
+  <div class="post-content">
+    <div class="body"><%= highlight_hashtags(post.body) %></div>
+    <% if post.hash_tags.any? %>
+      <div class="tags">
+        <% post.hash_tags.each do |tag| %>
+          <span class="tag"><%= tag.name %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   
   <% if post.replies.any? %>
     <div data-controller="replies" 
