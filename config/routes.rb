@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   root "posts#index"
-  
-  resources :posts, only: [:index, :create, :destroy] do
-    resources :replies, only: [:create]
+
+  resources :posts, only: [ :index, :create, :destroy ] do
+    resources :replies, only: [ :create ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
