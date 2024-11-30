@@ -10,7 +10,7 @@
             <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
           </div>
         </div>
-        <div class="body"><%= reply.body %></div>
+        <div class="body"><%= format_content(reply.body) %></div>
       </div>
     <% end %>
   </details>

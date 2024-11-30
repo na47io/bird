@@ -17,7 +17,7 @@
   </div>
   
   <div class="post-content">
-    <div class="body"><%= highlight_hashtags(post.body) %></div>
+    <div class="body"><%= format_content(post.body) %></div>
     <% if post.hash_tags.any? %>
       <div class="tags">
         <% post.hash_tags.each do |tag| %>
