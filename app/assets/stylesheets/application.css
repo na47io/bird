@@ -166,6 +166,28 @@
   font-style: italic;
 }
 
+.tags {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e8f5fd;
+  color: #1da1f2;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.tag:hover {
+  background: #1da1f2;
+  color: white;
+  cursor: pointer;
+}
+
 .post-dialog {
   padding: 20px;
   border-radius: 12px;

@@ -14,6 +14,13 @@
   <div class="author"><%= post.author %></div>
   <div class="body"><%= post.body %></div>
   <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
+  <% if post.tags.any? %>
+    <div class="tags">
+      <% post.tags.each do |tag| %>
+        <span class="tag"><%= tag.name %></span>
+      <% end %>
+    </div>
+  <% end %>
   
   <div class="replies">
     <% post.replies.each do |reply| %>
