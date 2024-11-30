@@ -1,27 +1,14 @@
 <% if post.replies.any? %>
-  <div data-controller="replies" 
-       data-replies-count-value="<%= post.replies.count %>"
-       data-replies-search-value="<%= @query.present? %>">
-    <button 
-      data-action="replies#toggle" 
-      data-replies-target="count"
-      class="replies-toggle">
-      Hide replies
-    </button>
-    
-    <div class="replies" data-replies-target="replies">
-    <% post.replies.each do |reply| %>
-      <div class="reply">
-        <div class="author-section">
-          <div class="profile-image"></div>
-          <div class="author-details">
-            <div class="author"><%= reply.author %></div>
-            <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
-          </div>
+  <% post.replies.each do |reply| %>
+    <div class="reply">
+      <div class="author-section">
+        <div class="profile-image"></div>
+        <div class="author-details">
+          <div class="author"><%= reply.author %></div>
+          <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
         </div>
-        <div class="body"><%= reply.body %></div>
       </div>
-    <% end %>
+      <div class="body"><%= reply.body %></div>
     </div>
-  </div>
+  <% end %>
 <% end %>
