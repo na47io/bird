@@ -305,6 +305,25 @@ body {
   cursor: pointer;
 }
 
+.load-more-button {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #1da1f2;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.load-more-button:hover {
+  background-color: #1991da;
+}
+
 .post-dialog,
 .reply-dialog {
   padding: 0;

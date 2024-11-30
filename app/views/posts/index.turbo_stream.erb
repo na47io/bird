@@ -1,0 +1,7 @@
+<%= turbo_stream.append "posts" do %>
+  <%= render partial: "posts/post", collection: @posts %>
+<% end %>
+
+<%= turbo_stream.replace "load-more" do %>
+  <%= render "load_more", page: @page, per_page: @per_page, total_count: @total_count %>
+<% end %>

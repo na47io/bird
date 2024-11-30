@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   allow_unauthenticated_access only: [:index]
   def index
     @query = params[:q]
+    @page = (params[:page] || 1).to_i
+    @per_page = 5
+    
     base_query = Post.includes(:replies).order(created_at: :desc)
 
     if @query.present?
@@ -9,7 +12,15 @@ class PostsController < ApplicationController
         .references(:replies)
         .distinct
     else
-      @posts = base_query.all
+      @posts = base_query
+    end
+
+    @total_count = @posts.count
+    @posts = @posts.limit(@per_page).offset((@page - 1) * @per_page)
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
     end
   end
 

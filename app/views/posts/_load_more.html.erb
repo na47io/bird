@@ -1,0 +1,5 @@
+<% if total_count > (page * per_page) %>
+  <%= link_to "Load More", posts_path(page: page + 1, q: @query), 
+      class: "load-more-button",
+      data: { turbo_stream: true } %>
+<% end %>
