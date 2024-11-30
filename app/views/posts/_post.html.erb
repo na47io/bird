@@ -3,8 +3,13 @@
 <div class="post">
   <div class="post-header">
     <div class="post-meta">
-      <div class="author"><%= post.author %></div>
-      <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
+      <div class="author-section">
+        <div class="profile-image"></div>
+        <div class="author-details">
+          <div class="author"><%= post.author %></div>
+          <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
+        </div>
+      </div>
     </div>
     <button class="reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
   </div>
@@ -34,9 +39,14 @@
       <div class="replies" data-replies-target="replies">
       <% post.replies.each do |reply| %>
         <div class="reply">
-          <div class="author"><%= reply.author %></div>
+          <div class="author-section">
+            <div class="profile-image"></div>
+            <div class="author-details">
+              <div class="author"><%= reply.author %></div>
+              <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
+            </div>
+          </div>
           <div class="body"><%= reply.body %></div>
-          <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
         </div>
       <% end %>
       </div>
