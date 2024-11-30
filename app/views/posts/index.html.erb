@@ -1,5 +1,5 @@
 <div class="main-content">
-  <%= turbo_stream_from "posts" %>
+  <%= turbo_stream_from "posts", data: { turbo_action: "prepend" } %>
   <div class="container">
   <p style="color: green"><%= notice %></p>
 
