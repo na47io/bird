@@ -143,6 +143,21 @@ body {
   font-size: 1em;
 }
 
+details {
+  margin-top: 15px;
+}
+
+summary {
+  cursor: pointer;
+  color: #536471;
+  font-size: 0.9em;
+  padding: 8px 0;
+}
+
+summary:hover {
+  color: #1da1f2;
+}
+
 .reply-button {
   background: #1da1f2;
   color: white;

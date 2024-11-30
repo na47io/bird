@@ -1,14 +1,17 @@
 <% if post.replies.any? %>
-  <% post.replies.each do |reply| %>
-    <div class="reply">
-      <div class="author-section">
-        <div class="profile-image"></div>
-        <div class="author-details">
-          <div class="author"><%= reply.author %></div>
-          <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
+  <details>
+    <summary>Show <%= pluralize(post.replies.count, 'reply') %></summary>
+    <% post.replies.each do |reply| %>
+      <div class="reply">
+        <div class="author-section">
+          <div class="profile-image"></div>
+          <div class="author-details">
+            <div class="author"><%= reply.author %></div>
+            <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
+          </div>
         </div>
+        <div class="body"><%= reply.body %></div>
       </div>
-      <div class="body"><%= reply.body %></div>
-    </div>
-  <% end %>
+    <% end %>
+  </details>
 <% end %>
