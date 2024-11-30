@@ -27,8 +27,9 @@
   </body>
 
   <footer class="footer">
-    <a href="https://github.com/na47io/bird" target="_blank">source</a>
+    <%= link_to "posts", "/posts" %> 
     · <a href="/about">about</a>
+    · <a href="https://github.com/na47io/bird" target="_blank">source</a>
     <% if authenticated? %>
       · <a href="/profile/edit">profile</a>
     <% else %>
