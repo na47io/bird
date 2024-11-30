@@ -3,9 +3,9 @@
   <%= form.submit "Post", class: "btn btn-primary btn-md" %>
 </div>
 
-<div class="dialog-content">
+<div class="dialog-content" data-controller="character-counter" data-character-counter-max-length-value="140">
   <div class="profile-image"></div>
-  <div class="input-area">
+  <div class="input-area"> 
     <%= form.text_field :author, placeholder: "Your name", class: "author-input" %>
     <%= form.text_area :body, 
           placeholder: "What's up?", 
@@ -31,10 +31,7 @@
       <select class="language-select">
         <option>English</option>
       </select>
-      <span class="character-count" 
-            data-controller="character-counter"
-            data-character-counter-max-length-value="140"
-            data-character-counter-target="counter">140</span>
+      <span class="character-count" data-character-counter-target="counter">140</span>
     </div>
   </div>
 </div>
