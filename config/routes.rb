@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   root "posts#index"
   
   resources :posts, only: [:index, :create, :destroy] do
