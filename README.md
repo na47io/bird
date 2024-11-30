@@ -1,24 +1,60 @@
-# README
+# 🐦 Bird
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bird is an open-source microblogging platform that emphasizes simplicity and user privacy. It's designed for personal use, allowing posts of 140 characters or less to express thoughts without the social pressure of content curation.
 
-Things you may want to cover:
+## Why Bird?
 
-* Ruby version
+Traditional microblogging platforms have evolved to prioritize sharing over personal expression. Bird takes a different approach by:
 
-* System dependencies
+- Focusing on personal thoughts rather than social sharing
+- Removing the pressure to appear cooler or more knowledgeable
+- Eliminating the need for content curation
+- Providing a space for authentic self-expression
 
-* Configuration
+## Features
 
-* Database creation
+- 140-character limit for concise expression
+- Hashtag support for organizing thoughts
+- Simple, clean interface
+- User authentication and privacy controls
+- Reply functionality for self-dialogue
+- Search capabilities across posts and replies
 
-* Database initialization
+## Technical Stack
 
-* How to run the test suite
+- Ruby on Rails
+- Turbo for dynamic updates
+- Stimulus.js for JavaScript behaviors
+- PostgreSQL database
+- Modern CSS with custom properties
 
-* Services (job queues, cache servers, search engines, etc.)
+## Development Setup
 
-* Deployment instructions
+1. Clone the repository
+```bash
+git clone https://github.com/na47io/bird.git
+cd bird
+```
 
-* ...
+2. Install dependencies
+```bash
+bundle install
+```
+
+3. Setup database
+```bash
+rails db:create db:migrate
+```
+
+4. Start the server
+```bash
+rails server
+```
+
+## Contributing
+
+Bird is open source and contributions are welcome. Please feel free to submit pull requests or open issues for bugs and feature requests.
+
+## License
+
+This project is open source and available under the MIT License.
