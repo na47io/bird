@@ -8,8 +8,7 @@
   
   <div class="search-section">
     <%= form_tag posts_path, method: :get, class: "search-form" do %>
-      <%= search_field_tag :q, params[:q], placeholder: "Search posts and replies...", class: "search-input" %>
-      <%= submit_tag "Search", class: "btn btn-primary btn-md" %>
+      <%= search_field_tag :q, params[:q], placeholder: "Search posts and replies... (press Enter)", class: "search-input" %>
     <% end %>
   </div>
 </div>
