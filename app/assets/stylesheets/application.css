@@ -376,6 +376,80 @@ body {
   text-decoration: underline;
 }
 
+/* Login page styles */
+.login-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.login-container h1 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-input:focus {
+  border-color: #1da1f2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.forgot-password-link {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.alert-error {
+  background-color: #ffeaea;
+  color: #dc3545;
+  border: 1px solid #ffcdd2;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #28a745;
+  border: 1px solid #c8e6c9;
+}
+
 .post-dialog,
 .reply-dialog {
   padding: 0;
