@@ -1,0 +1,34 @@
+<div class="main-content">
+  <div class="container login-container">
+    <h1>Edit Profile</h1>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+
+    <%= form_with model: Current.user, url: profile_path, class: "login-form" do |form| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-error">
+          <% @user.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <label>Email address</label>
+        <div class="login-input" style="background: #f8f9fa;"><%= Current.user.email_address %></div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :username %>
+        <%= form.text_field :username,
+            required: true,
+            class: "login-input",
+            placeholder: "Choose a username" %>
+      </div>
+
+      <%= form.submit "Update Profile", class: "btn btn-primary btn-lg login-button" %>
+    <% end %>
+  </div>
+</div>

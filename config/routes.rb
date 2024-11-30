@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resource :session
+  resource :profile, only: [:edit, :update]
   resources :passwords, param: :token
   root "posts#index"
 
