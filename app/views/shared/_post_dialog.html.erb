@@ -3,9 +3,9 @@
   <%= form.submit "Post", class: "btn btn-primary btn-md" %>
 </div>
 
-<div class="dialog-content" data-controller="character-counter" data-character-counter-max-length-value="140">
+<div class="dialog-content">
   <div class="profile-image"></div>
-  <div class="input-area"> 
+  <div class="input-area" data-controller="character-counter" data-character-counter-max-length-value="140"> 
     <%= form.text_field :author, placeholder: "Your name", class: "author-input" %>
     <%= form.text_area :body, 
           placeholder: "What's up?", 
@@ -15,23 +15,21 @@
             character_counter_target: "input",
             action: "input->character-counter#updateCounter"
           } %>
-  </div>
-</div>
-
-<div class="dialog-footer">
-  
-  <div class="dialog-tools">
-    <div class="media-tools">
-      <button type="button" class="tool-button">🖼️</button>
-      <button type="button" class="tool-button">🎥</button>
-      <button type="button" class="tool-button">GIF</button>
-      <button type="button" class="tool-button">😊</button>
-    </div>
-    <div class="post-meta-tools">
-      <select class="language-select">
-        <option>English</option>
-      </select>
-      <span class="character-count" data-character-counter-target="counter">140</span>
+    <div class="dialog-footer">
+      <div class="dialog-tools">
+        <div class="media-tools">
+          <button type="button" class="tool-button">🖼️</button>
+          <button type="button" class="tool-button">🎥</button>
+          <button type="button" class="tool-button">GIF</button>
+          <button type="button" class="tool-button">😊</button>
+        </div>
+        <div class="post-meta-tools">
+          <select class="language-select">
+            <option>English</option>
+          </select>
+          <span class="character-count" data-character-counter-target="counter">140</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
