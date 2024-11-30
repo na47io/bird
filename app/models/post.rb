@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_and_belongs_to_many :hash_tags
 
-  validates :body, presence: true
+  validates :body, presence: true, length: { maximum: 140 }
   validates :author, presence: true
 
   after_save :process_hashtags
