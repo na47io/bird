@@ -1,4 +1,4 @@
-<%= turbo_stream.append "posts" do %>
+<%= turbo_stream.append "posts", class: "animate-posts" do %>
   <%= render partial: "posts/post", collection: @posts %>
 <% end %>
 
