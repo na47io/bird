@@ -19,7 +19,7 @@
     <% if post.hash_tags.any? %>
       <div class="tags">
         <% post.hash_tags.each do |tag| %>
-          <span class="tag"><%= tag.name %></span>
+          <%= link_to tag.name, posts_path(q: tag.name), class: "tag" %>
         <% end %>
       </div>
     <% end %>
