@@ -450,8 +450,7 @@ body {
   border: 1px solid #c8e6c9;
 }
 
-.post-dialog,
-.reply-dialog {
+.dialog-base {
   padding: 0;
   border-radius: 16px;
   border: none;
@@ -465,13 +464,11 @@ body {
   margin: 0;
 }
 
-.post-dialog::backdrop,
-.reply-dialog::backdrop {
+.dialog-base::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.post-form,
-.reply-form {
+.dialog-form {
   display: flex;
   flex-direction: column;
 }

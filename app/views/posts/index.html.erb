@@ -31,8 +31,8 @@
   <%= render "load_more", page: @page, per_page: @per_page, total_count: @total_count %>
 </div>
 
-<dialog id="new-post-dialog" class="post-dialog" onclick="if (event.target === this) this.close()">
-  <%= form_for Post.new, html: { class: "post-form", onsubmit: "this.closest('dialog').close()" }, data: { turbo: true } do |f| %>
+<dialog id="new-post-dialog" class="dialog-base" onclick="if (event.target === this) this.close()">
+  <%= form_for Post.new, html: { class: "dialog-form", onsubmit: "this.closest('dialog').close()" }, data: { turbo: true } do |f| %>
     <%= render 'shared/post_dialog', form: f %>
   <% end %>
 </dialog>
