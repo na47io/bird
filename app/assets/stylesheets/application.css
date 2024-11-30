@@ -188,6 +188,16 @@
   cursor: pointer;
 }
 
+.highlighted-tag {
+  color: #1da1f2;
+  font-weight: 500;
+}
+
+.highlighted-tag:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .post-dialog {
   padding: 20px;
   border-radius: 12px;

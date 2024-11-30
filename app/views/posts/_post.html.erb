@@ -2,7 +2,7 @@
 </div>
 <div class="post">
   <div class="author"><%= post.author %></div>
-  <div class="body"><%= post.body %></div>
+  <div class="body"><%= highlight_hashtags(post.body) %></div>
   <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
   <% if post.hash_tags.any? %>
     <div class="tags">
