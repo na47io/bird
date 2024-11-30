@@ -53,7 +53,7 @@
     </div>
   <% end %>
   
-  <dialog id="reply-dialog-<%= post.id %>" class="reply-dialog">
+  <dialog id="reply-dialog-<%= post.id %>" class="reply-dialog" onclick="if (event.target === this) this.close()">
     <%= form_for [post, Reply.new], html: { class: "reply-form" } do |f| %>
       <%= render 'shared/post_dialog', form: f %>
     <% end %>

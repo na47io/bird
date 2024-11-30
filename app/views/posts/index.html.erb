@@ -23,7 +23,7 @@
   <%= render partial: "posts/post", collection: @posts %>
 </div>
 
-<dialog id="new-post-dialog" class="post-dialog">
+<dialog id="new-post-dialog" class="post-dialog" onclick="if (event.target === this) this.close()">
   <%= form_for Post.new, html: { class: "post-form" }, data: { turbo: true } do |f| %>
     <%= render 'shared/post_dialog', form: f %>
   <% end %>
