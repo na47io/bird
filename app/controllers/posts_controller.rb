@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  allow_unauthenticated_access only: [:index]
   def index
     @query = params[:q]
     base_query = Post.includes(:replies).order(created_at: :desc)

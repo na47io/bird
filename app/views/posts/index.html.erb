@@ -16,7 +16,9 @@
 <% if @query.present? %>
   <p class="search-info">Showing results for "<%= @query %>"</p>
 <% end %>
-<button class="btn btn-primary btn-lg new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
+<% if authenticated? %>
+  <button class="btn btn-primary btn-lg new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
+<% end %>
 
 <div id="posts">
   <%= render partial: "posts/post", collection: @posts %>

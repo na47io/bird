@@ -11,7 +11,9 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary btn-md reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
+    <% if authenticated? %>
+      <button class="btn btn-primary btn-md reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
+    <% end %>
   </div>
   
   <div class="post-content">

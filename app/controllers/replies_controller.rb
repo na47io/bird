@@ -1,4 +1,5 @@
 class RepliesController < ApplicationController
+  allow_unauthenticated_access only: [:index]
   def create
     @post = Post.find(params[:post_id])
     @reply = @post.replies.build(reply_params)
