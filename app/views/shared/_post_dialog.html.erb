@@ -1,6 +1,6 @@
 <div class="dialog-header">
   <button type="button" class="cancel-button" onclick="this.closest('dialog').close()">Cancel</button>
-  <%= form.submit "Post", class: "btn btn-primary btn-md" %>
+  <%= form.submit "Submit", class: "btn btn-primary btn-md" %>
 </div>
 
 <div class="dialog-content">
@@ -15,21 +15,22 @@
             character_counter_target: "input",
             action: "input->character-counter#updateCounter"
           } %>
-    <div class="dialog-footer">
-      <div class="dialog-tools">
-        <div class="media-tools">
-          <button type="button" class="tool-button">🖼️</button>
-          <button type="button" class="tool-button">🎥</button>
-          <button type="button" class="tool-button">GIF</button>
-          <button type="button" class="tool-button">😊</button>
-        </div>
-        <div class="post-meta-tools">
-          <select class="language-select">
-            <option>English</option>
-          </select>
-          <span class="character-count" data-character-counter-target="counter">140</span>
-        </div>
-      </div>
+  </div>
+</div>
+
+<div class="dialog-footer">
+  <div class="dialog-tools">
+    <div class="media-tools">
+      <button type="button" class="tool-button">🖼️</button>
+      <button type="button" class="tool-button">🎥</button>
+      <button type="button" class="tool-button">GIF</button>
+      <button type="button" class="tool-button">😊</button>
+    </div>
+    <div class="post-meta-tools">
+      <select class="language-select">
+        <option>English</option>
+      </select>
+      <span class="character-count" data-character-counter-target="counter">140</span>
     </div>
   </div>
 </div>
