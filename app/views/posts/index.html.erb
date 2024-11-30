@@ -3,6 +3,7 @@
 <% content_for :title, "Posts" %>
 
 <h1>Posts</h1>
+<button class="new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -46,8 +47,6 @@
     </div>
   <% end %>
 </div>
-
-<button class="new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
 
 <dialog id="new-post-dialog" class="post-dialog">
   <%= form_for Post.new, html: { class: "post-form" } do |f| %>
