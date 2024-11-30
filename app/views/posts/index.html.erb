@@ -1,8 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<% content_for :title, @query.present? ? "Search Results" : "Posts" %>
+  <% content_for :title, @query.present? ? "Search Results" : "Posts" %>
 
-<div class="header-section">
+  <div class="header-section">
   <h1><%= @query.present? ? "Search Results" : "Posts" %></h1>
   
   <div class="search-section">
@@ -38,3 +39,4 @@
     <button type="button" onclick="this.closest('dialog').close()">Cancel</button>
   <% end %>
 </dialog>
+</div>
