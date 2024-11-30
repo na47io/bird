@@ -12,17 +12,18 @@
     </div>
   <% end %>
   
-  <div data-controller="replies" 
-       data-replies-count-value="<%= post.replies.count %>"
-       data-replies-search-value="<%= @query.present? %>">
-    <button 
-      data-action="replies#toggle" 
-      data-replies-target="count"
-      class="replies-toggle">
-      Hide replies
-    </button>
-    
-    <div class="replies" data-replies-target="replies">
+  <% if post.replies.any? %>
+    <div data-controller="replies" 
+         data-replies-count-value="<%= post.replies.count %>"
+         data-replies-search-value="<%= @query.present? %>">
+      <button 
+        data-action="replies#toggle" 
+        data-replies-target="count"
+        class="replies-toggle">
+        Hide replies
+      </button>
+      
+      <div class="replies" data-replies-target="replies">
       <% post.replies.each do |reply| %>
         <div class="reply">
           <div class="author"><%= reply.author %></div>
@@ -30,8 +31,9 @@
           <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
         </div>
       <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
   
   <button class="reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
   
