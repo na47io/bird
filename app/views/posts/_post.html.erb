@@ -27,33 +27,9 @@
     <% end %>
   </div>
   
-  <% if post.replies.any? %>
-    <div data-controller="replies" 
-         data-replies-count-value="<%= post.replies.count %>"
-         data-replies-search-value="<%= @query.present? %>">
-      <button 
-        data-action="replies#toggle" 
-        data-replies-target="count"
-        class="replies-toggle">
-        Hide replies
-      </button>
-      
-      <div class="replies" data-replies-target="replies">
-      <% post.replies.each do |reply| %>
-        <div class="reply">
-          <div class="author-section">
-            <div class="profile-image"></div>
-            <div class="author-details">
-              <div class="author"><%= reply.author %></div>
-              <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
-            </div>
-          </div>
-          <div class="body"><%= reply.body %></div>
-        </div>
-      <% end %>
-      </div>
-    </div>
-  <% end %>
+  <div id="replies_<%= post.id %>">
+    <%= render "posts/replies", post: post %>
+  </div>
 
   <dialog id="reply-dialog-<%= post.id %>" class="dialog-base" onclick="if (event.target === this) this.close()">
     <%= form_for [post, Reply.new], html: { class: "dialog-form", onsubmit: "this.closest('dialog').close()" }, data: {turbo: true} do |f| %>
