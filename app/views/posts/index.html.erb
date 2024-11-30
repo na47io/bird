@@ -10,7 +10,7 @@
 </div>
 
 <dialog id="new-post-dialog" class="post-dialog">
-  <%= form_for Post.new, html: { class: "post-form" }, data: { turbo: true } do |f| %>
+  <%= form_for Post.new, html: { class: "post-form", onsubmit: "this.closest('dialog').close()"}, data: { turbo: true } do |f| %>
     <div>
       <%= f.label :author %>
       <%= f.text_field :author %>
