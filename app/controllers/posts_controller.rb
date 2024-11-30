@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   def index
     @query = params[:q]
     base_query = Post.includes(:replies).order(created_at: :desc)
-    
+
     if @query.present?
-      @posts = base_query.where("posts.body ILIKE :query OR posts.author ILIKE :query OR replies.body ILIKE :query OR replies.author ILIKE :query", query: "%#{@query}%")
+      @posts = base_query.where("posts.body LIKE :query OR posts.author LIKE :query OR replies.body LIKE :query OR replies.author LIKE :query", query: "%#{@query}%")
         .references(:replies)
         .distinct
     else
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.turbo_stream { 
+        format.turbo_stream {
           render turbo_stream: turbo_stream.prepend("posts", partial: "posts/post", locals: { post: @post })
         }
         format.html { redirect_to posts_path, notice: "Post was successfully created." }
