@@ -27,8 +27,9 @@
   </body>
 
   <footer class="footer">
-    <a href="https://github.com/na47io/bird" target="_blank">
-      source
-    </a>
+    <a href="https://github.com/na47io/bird" target="_blank">source</a>
+    <% unless authenticated? %>
+      · <a href="/session/new">log in</a>
+    <% end %>
   </footer>
 </html>

@@ -358,6 +358,14 @@ body {
   margin-top: 2rem;
 }
 
+.footer {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  color: #536471;
+}
+
 .footer a {
   color: #1da1f2;
   text-decoration: none;
