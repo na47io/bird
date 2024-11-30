@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resource :profile, only: [:edit, :update]
   resources :passwords, param: :token
   root "posts#index"
+  
+  get 'about', to: 'pages#about'
 
   resources :posts, only: [ :index, :create, :destroy ] do
     resources :replies, only: [ :create ]
