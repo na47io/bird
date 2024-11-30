@@ -10,3 +10,37 @@
   </p>
 
 </div>
+<div class="post">
+  <div class="author"><%= post.author %></div>
+  <div class="body"><%= post.body %></div>
+  <div class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</div>
+  
+  <div class="replies">
+    <% post.replies.each do |reply| %>
+      <div class="reply">
+        <div class="author"><%= reply.author %></div>
+        <div class="body"><%= reply.body %></div>
+        <div class="timestamp"><%= time_ago_in_words(reply.created_at) %> ago</div>
+      </div>
+    <% end %>
+  </div>
+  
+  <button class="reply-button" onclick="document.getElementById('reply-dialog-<%= post.id %>').showModal()">Reply</button>
+  
+  <dialog id="reply-dialog-<%= post.id %>" class="reply-dialog">
+    <%= form_for [post, Reply.new], html: { class: "reply-form" } do |f| %>
+      <div>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+      </div>
+      
+      <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+      
+      <%= f.submit "Post Reply", class: "reply-button" %>
+      <button type="button" onclick="this.closest('dialog').close()">Cancel</button>
+    <% end %>
+  </dialog>
+</div>
