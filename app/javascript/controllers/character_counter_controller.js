@@ -14,9 +14,9 @@ export default class extends Controller {
     
     // Visual feedback when over limit
     if (remaining < 0) {
-      this.counterTarget.style.color = '#ff4136'
+      this.counterTarget.style.color = var(--color-error)
     } else {
-      this.counterTarget.style.color = '#536471'
+      this.counterTarget.style.color = var(--color-text-secondary)
     }
   }
 }
