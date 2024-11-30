@@ -1,8 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Posts" %>
+<% content_for :title, @query.present? ? "Search Results" : "Posts" %>
 
-<h1>Posts</h1>
+<div class="header-section">
+  <h1><%= @query.present? ? "Search Results" : "Posts" %></h1>
+  
+  <div class="search-section">
+    <%= form_tag posts_path, method: :get, class: "search-form" do %>
+      <%= search_field_tag :q, params[:q], placeholder: "Search posts and replies...", class: "search-input" %>
+      <%= submit_tag "Search", class: "search-button" %>
+    <% end %>
+  </div>
+</div>
+
+<% if @query.present? %>
+  <p class="search-info">Showing results for "<%= @query %>"</p>
+<% end %>
 <button class="new-post-button" onclick="document.getElementById('new-post-dialog').showModal()">New Post</button>
 
 <div id="posts">

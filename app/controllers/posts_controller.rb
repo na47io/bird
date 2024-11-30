@@ -1,6 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:replies).order(created_at: :desc).all
+    @query = params[:q]
+    base_query = Post.includes(:replies).order(created_at: :desc)
+    
+    if @query.present?
+      @posts = base_query.where("posts.body ILIKE :query OR posts.author ILIKE :query OR replies.body ILIKE :query OR replies.author ILIKE :query", query: "%#{@query}%")
+        .references(:replies)
+        .distinct
+    else
+      @posts = base_query.all
+    end
   end
 
   def create
